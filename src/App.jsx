@@ -31,9 +31,11 @@ export default function App() {
   const [loading, setLoading] = useState(true);
 
   return (
-    <Router>
+    <Router basename="/great-eats">
 
-      {loading && <LoadingScreen onFinish={() => setLoading(false)} />}
+      {loading && (
+        <LoadingScreen onFinish={() => setLoading(false)} />
+      )}
 
       {!loading && (
         <>
