@@ -1,4 +1,4 @@
-import { BrowserRouter as Router, Routes, Route, useLocation } from "react-router-dom";
+import { Routes, Route, useLocation } from "react-router-dom";
 import { AnimatePresence } from "framer-motion";
 import { useState } from "react";
 
@@ -31,8 +31,7 @@ export default function App() {
   const [loading, setLoading] = useState(true);
 
   return (
-    <Router basename="/great-eats">
-
+    <>
       {loading && (
         <LoadingScreen onFinish={() => setLoading(false)} />
       )}
@@ -43,7 +42,6 @@ export default function App() {
           <AnimatedRoutes />
         </>
       )}
-
-    </Router>
+    </>
   );
 }
